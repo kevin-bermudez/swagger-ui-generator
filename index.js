@@ -3,9 +3,11 @@ const {
   generateRawSwaggerFromJsDoc,
   createFileSwaggerFromJsDoc
 } = require('./generateRawSwaggerFromJsDoc')
+const generateFileSwaggerUiFromJsDoc = require('./generateFileSwaggerUiFromJsDoc')
 
 module.exports = {
   generateFilesSwaggerUi,
   generateRawSwaggerFromJsDoc,
-  createFileSwaggerFromJsDoc
+  createFileSwaggerFromJsDoc,
+  generateFileSwaggerUiFromJsDoc
 }
