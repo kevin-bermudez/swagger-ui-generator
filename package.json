@@ -28,7 +28,6 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
-    "datauri": "^3.0.0",
     "swagger-jsdoc": "6.0.0"
   }
 }

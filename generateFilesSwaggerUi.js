@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const datauri = require('datauri')
 
 const swaggerDistPath = path.resolve(__dirname, 'swagger-ui-dist')
 const listFiles = fs.readdirSync(swaggerDistPath)
@@ -8,8 +7,8 @@ const listFiles = fs.readdirSync(swaggerDistPath)
 const generateContentForIndexHtml = async (jsonSwaggerPath, distPath) => {
   const pathIndex = `${distPath}/index.html`
   const content = fs.readFileSync(pathIndex, 'utf-8')
-  const dataUriJsonSwagger = await datauri(jsonSwaggerPath)
-  const result = content.replace('{{urlSwaggerJson}}', dataUriJsonSwagger)
+  const jsonSwaggerContent = fs.readFileSync(jsonSwaggerPath, 'utf-8')
+  const result = content.replace('{{swaggerJsonDoc}}', jsonSwaggerContent)
   fs.writeFileSync(pathIndex, result)
 }
 
